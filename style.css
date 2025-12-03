@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.game-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+input {
+    padding: 12px;
+    width: 200px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: #fff;
+    color: #333;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.restart {
+    background: #ffe600;
+    color: #000;
+}
+
+#message {
+    font-size: 20px;
+    margin-top: 15px;
+    min-height: 25px;
+}

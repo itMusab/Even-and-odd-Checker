@@ -1,18 +1,27 @@
+let secretNumber = Math.floor(Math.random() * 100) + 1;
 
-        function checkNumber() {
-            const inputField = document.getElementById('numberInput');
-            const resultDiv = document.getElementById('result');
-            const num = inputField.value;
-            resultDiv.textContent = '';
-            if (num === '' || isNaN(num) || num <= 0 || !Number.isInteger(Number(num))) {
-                resultDiv.textContent = 'Invalid input. Please enter a positive integer.';
-                return;
-            }
+function checkGuess() {
+    const guess = Number(document.getElementById("guessInput").value);
+    const msg = document.getElementById("message");
 
-            const numberValue = parseInt(num);
-            if (numberValue % 2 === 0) {
-                resultDiv.textContent = `The number ${numberValue} is EVEN.`;
-            } else {
-                resultDiv.textContent = `The number ${numberValue} is ODD.`;
-            }
-        }
+    if (!guess) {
+        msg.innerText = "Please enter a valid number!";
+        return;
+    }
+
+    if (guess === secretNumber) {
+        msg.innerText = "Correct! 🎉 You guessed it!";
+    } 
+    else if (guess > secretNumber) {
+        msg.innerText = "Too high! 🔼";
+    } 
+    else {
+        msg.innerText = "Too low! 🔽";
+    }
+}
+
+function restartGame() {
+    secretNumber = Math.floor(Math.random() * 100) + 1;
+    document.getElementById("message").innerText = "";
+    document.getElementById("guessInput").value = "";
+}
