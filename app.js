@@ -35,7 +35,7 @@ function updateNames() {
 
 function updateGameInfo() {
     const name = currentPlayer === 'X' ? playerXName : playerOName;
-    gameInfo.textContent = `${name} ki baari`;
+    gameInfo.textContent = `${name} Turn`;
 }
 
 function handleCellClick(e) {
@@ -59,7 +59,7 @@ function checkWinner() {
             gameBoard[b] === gameBoard[c]) {
 
             const winnerName = currentPlayer === 'X' ? playerXName : playerOName;
-            gameInfo.textContent = `🎉 ${winnerName} jeet gya!`;
+            gameInfo.textContent = `🎉 ${winnerName} won!`;
             gameActive = false;
 
             scores[currentPlayer]++;
