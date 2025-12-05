@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess The Number </title>
+    <title> Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="game-box">
-        <h1>Guess the Number (1–100)</h1>
-        <h2></h2>
+<h2> Tic Tac Toe</h2>
 
-        <input type="number" id="guessInput" placeholder="Enter your guess">
+<div class="names">
+    <input id="player1Name" placeholder="Player 1 Name">
+    <input id="player2Name" placeholder="Player 2 Name">
+    <button onclick="updateNames()"> Update Names </button>
+</div>
 
-        <button onclick="checkGuess()">Submit Guess</button>
+<h3 id="gameInfo">Player 1 Turn </h3>
 
-        <p id="message"></p>
+<div class="board">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
 
-        <button class="restart" onclick="restartGame()">Play Again</button>
-    </div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
 
-    <script src="app.js"></script>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+</div>
+
+<div class="scores">
+    <p><b id="displayPlayer1">Player 1</b> (X): <span id="scoreX">0</span></p>
+    <p><b id="displayPlayer2">Player 2</b> (O): <span id="scoreO">0</span></p>
+    <p><b>Draw:</b> <span id="scoreDraw">0</span></p>
+</div>
+
+<button onclick="resetGame()">Reset Game</button>
+<button onclick="resetAll()">Reset All</button>
+
+<script src="app.js"></script>
 </body>
 </html>
